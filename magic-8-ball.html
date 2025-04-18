@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magic Em-Ball</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #282c34;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      margin-top: 50px;
+    }
+
+    #magic-ball {
+      margin: 20px auto;
+      width: 800px; /* Adjusted ball size */
+      height: 800px; /* Adjusted ball size */
+      background-color: black;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
+      overflow: hidden; /* Ensure content stays within the ball */
+    }
+
+    #response {
+      max-width: 100%; /* Display the entire image */
+      max-height: 100%; /* Display the entire image */
+      object-fit: contain; /* Ensure the image maintains its aspect ratio */
+      display: none; /* Hide the image by default */
+      border-radius: 0; /* Remove cropping effect */
+    }
+
+    #placeholder-text {
+      position: absolute;
+      color: white;
+      font-size: 20px; /* Adjust font size for smaller ball */
+      text-align: center;
+      padding: 10px;
+    }
+
+    #question-box {
+      margin-top: 20px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      width: 80%;
+      max-width: 300px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #61dafb;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px; /* Adjust margin to position between input and ball */
+    }
+
+    button:hover {
+      background-color: #21a1f1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Magic Em-Ball</h1>
+  <div id="question-box">
+    <input type="text" id="user-question" placeholder="Type your question here" />
+  </div>
+  <button onclick="shakeMagic8Ball()">Ask the Magic Em-Ball</button>
+  <div id="magic-ball">
+    <img id="response" src="" alt="Magic 8-Ball Response" />
+    <div id="placeholder-text">Your answer will appear here!</div>
+  </div>
+
+  <script>
+    const responses = [
+      "images/IMG1.png", // Replace with your custom image paths
+      "images/IMG2.png",
+      "images/IMG3.png",
+      "images/IMG4.png",
+      "images/IMG5.png",
+      "images/IMG6.png",
+      "images/IMG7.png",
+      "images/IMG8.png",
+      "images/IMG9.png"
+    ];
+
+    function shakeMagic8Ball() {
+      // Get the user's question
+      const userQuestion = document.getElementById("user-question").value;
+
+      // Check if the question is empty
+      if (!userQuestion.trim()) {
+        alert("Please type a question before asking the Magic 8-Ball!");
+        return;
+      }
+
+      // Select a random response
+      const randomIndex = Math.floor(Math.random() * responses.length);
+      const randomImage = responses[randomIndex];
+
+      // Set the image as the response
+      const responseElement = document.getElementById("response");
+      const placeholderText = document.getElementById("placeholder-text");
+
+      responseElement.src = randomImage;
+      responseElement.style.display = "block"; // Show the image
+      placeholderText.style.display = "none"; // Hide the placeholder text
+
+      // Optionally, log the user's question (for debugging or display purposes)
+      console.log("User's Question:", userQuestion);
+    }
+  </script>
+</body>
+</html>
