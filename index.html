@@ -6,6 +6,7 @@
   <title>Magic Em-Ball</title>
   <link rel="icon" href="MagicEmBallFavicon.png" type="image/png">
   <style>
+   
     body {
       font-family: Arial, sans-serif;
       text-align: center;
@@ -16,21 +17,24 @@
     }
 
     h1 {
-      margin-top: 50px;
+      margin-top: 20px;
+      font-size: 24px; /* Adjust font size for better readability on mobile */
     }
 
     #magic-ball {
       margin: 20px auto;
-      width: 800px; 
-      height: 800px;
+      width: 80vw; /* Use viewport width for a responsive size */
+      height: 80vw; /* Maintain a square shape based on viewport */
+      max-width: 800px; /* Limit maximum size for larger screens */
+      max-height: 800px; /* Limit maximum size for larger screens */
       background-color: black;
-      border-radius: 50%;
+      border-radius: 50%; /* Keep the circular shape */
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
       box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
-      overflow: hidden; 
+      overflow: hidden; /* Ensure content stays within the ball */
     }
 
     #response {
@@ -44,13 +48,14 @@
     #placeholder-text {
       position: absolute;
       color: white;
-      font-size: 20px; 
+      font-size: 16px; /* Adjust font size for smaller screens */
       text-align: center;
       padding: 10px;
     }
 
     #question-box {
       margin-top: 20px;
+      padding: 0 10px;
     }
 
     input[type="text"] {
@@ -58,8 +63,8 @@
       font-size: 16px;
       border-radius: 5px;
       border: 1px solid #ccc;
-      width: 80%;
-      max-width: 300px;
+      width: 90%; /* Adjust width for mobile screens */
+      max-width: 400px; /* Limit maximum width */
       box-sizing: border-box;
     }
 
@@ -75,6 +80,22 @@
 
     button:hover {
       background-color: #21a1f1;
+    }
+
+    /* Media Query for Smaller Screens */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 20px;
+      }
+
+      #placeholder-text {
+        font-size: 14px; /* Reduce placeholder text size */
+      }
+
+      button {
+        font-size: 14px;
+        padding: 8px 16px; /* Adjust button size for smaller screens */
+      }
     }
   </style>
 </head>
