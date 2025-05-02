@@ -99,6 +99,7 @@
     <input type="text" id="user-question" placeholder="Type your question here" />
   </div>
   <button onclick="shakeMagic8Ball()">Ask the Magic Em-Ball</button>
+  <button onclick="resetMagic8Ball()">Ask another question!</button>
   <div id="magic-ball">
     <img id="response" src="" alt="Magic 8-Ball Response" />
     <div id="placeholder-text">Your answer will appear here!</div>
@@ -160,6 +161,19 @@
 
       console.log("User's Question:", userQuestion);
     }
+    
+    function resetMagic8Ball() {
+   const userQuestion = document.getElementById("user-question");
+   userQuestion.value = "";
+
+   const responseElement = document.getElementById("response");
+   responseElement.style.display = "none";
+
+   const placeholderText = document.getElementById("placeholder-text");
+   placeholderText.style.display = "block";
+
+   console.log("Magic 8-Ball has been reset.");
+}
   </script>
 </body>
 </html>
