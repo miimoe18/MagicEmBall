@@ -168,7 +168,7 @@
       console.log("User's Question:", userQuestion);
     }
 
-    function resetMagic8Ball() {
+function resetMagic8Ball() {
    const userQuestion = document.getElementById("user-question");
    userQuestion.value = "";
 
@@ -177,6 +177,9 @@
 
    const placeholderText = document.getElementById("placeholder-text");
    placeholderText.style.display = "block";
+
+   const placeholderImage = document.getElementById("placeholder-image");
+   placeholderImage.style.display = "block"; // Show placeholder image
 
    console.log("Magic 8-Ball has been reset.");
 }
