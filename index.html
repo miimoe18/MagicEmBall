@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Magic Em-Ball</title>
   <link rel="icon" href="MagicEmBallFavicon.png" type="image/png">
-   <style>
+  <style>
     body {
       font-family: Arial, sans-serif;
       text-align: center;
@@ -22,10 +22,10 @@
 
     #magic-ball {
       margin: 20px auto;
-      width: 60vw; /* Increase size for desktop screens */
-      height: 60vw; /* Maintain a square shape based on viewport width */
-      max-width: 600px; /* Increase maximum size for larger screens */
-      max-height: 600px; /* Increase maximum size for larger screens */
+      width: 80vw; /* Large size for desktop screens */
+      height: 80vw; /* Maintain a square shape based on viewport width */
+      max-width: 800px; /* Limit maximum size for larger screens */
+      max-height: 800px; /* Limit maximum size for larger screens */
       background-color: black;
       border-radius: 50%;
       display: flex;
@@ -37,9 +37,9 @@
     }
 
     #response {
-      width: 100%; /* Stretch image to fill the container */
+      width: 100%; /* Stretch the image to fill the container */
       height: 100%;
-      object-fit: cover; /* Stretch smaller images to fit */
+      object-fit: contain; /* Maintain aspect ratio */
       display: none;
       margin: 0 auto;
     }
@@ -84,12 +84,13 @@
     /* Media Query for Smaller Screens (Mobile) */
     @media (max-width: 600px) {
       #magic-ball {
-        width: 80vw; /* Larger size for mobile screens */
+        width: 80vw; /* Keep the ball large for mobile as well */
         height: 80vw;
-        max-width: 500px; /* Limit maximum size for small devices */
-        max-height: 500px;
+        max-width: 800px;
+        max-height: 800px;
       }
     }
+ 
   </style>
 </head>
 <body>
