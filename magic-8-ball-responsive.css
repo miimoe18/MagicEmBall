@@ -29,11 +29,13 @@ h1 {
 }
 
 #response {
-  width: 100%; /* Stretch the image to fill the container */
-  height: 100%;
-  object-fit: contain; /* Maintain aspect ratio */
-  display: none;
-  margin: 0 auto;
+  width: 80%; /* Scale the image to 80% of the ball's size */
+  height: 80%; /* Maintain proportional height at 80% of the ball's size */
+  max-width: 80%; /* Prevent the image from exceeding 80% of the ball's width */
+  max-height: 80%; /* Prevent the image from exceeding 80% of the ball's height */
+  object-fit: contain; /* Ensure the image scales proportionally without distortion */
+  display: none; /* Hide the image by default */
+  margin: auto; /* Center the image inside the ball */
 }
 
 /* Media Query for Smaller Screens (Mobile) */
