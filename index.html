@@ -7,7 +7,7 @@
   <link rel="icon" href="MagicEmBallFavicon.png" type="image/png">
   <style>
    
-    body {
+       body {
       font-family: Arial, sans-serif;
       text-align: center;
       background-color: #282c34;
@@ -18,40 +18,39 @@
 
     h1 {
       margin-top: 20px;
-      font-size: 24px; /* Adjust font size for better readability on mobile */
+      font-size: 24px;
     }
 
     #magic-ball {
       margin: 20px auto;
-      width: 80vw; /* Use viewport width for a responsive size */
-      height: 80vw; /* Maintain a square shape based on viewport */
-      max-width: 800px; /* Limit maximum size for larger screens */
-      max-height: 800px; /* Limit maximum size for larger screens */
+      width: 40vw; /* Adjust size for desktop screens */
+      height: 40vw; /* Maintain a square shape based on viewport width */
+      max-width: 400px; /* Limit maximum size for larger screens */
+      max-height: 400px; /* Limit maximum size for larger screens */
       background-color: black;
-      border-radius: 50%; /* Keep the circular shape */
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
       box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
-      overflow: hidden; /* Ensure content stays within the ball */
+      overflow: hidden;
     }
 
     #response {
-  width: 80%; /* Set a percentage for responsiveness */
-  height: auto; /* Maintain aspect ratio */
-  max-width: 300px; /* Ensure images don’t get too large */
-  max-height: 300px; /* Limit the height */
-  object-fit: contain; /* Ensures the image scales without distortion */
-  display: none; /* Hide the image by default */
-  margin: 0 auto; /* Center the image horizontally */
-}
-
+      width: 100%; /* Stretch image to fill the container */
+      height: 100%;
+      max-width: 300px; /* Optional: Limit maximum size */
+      max-height: 300px;
+      object-fit: cover; /* Stretch smaller images to fit */
+      display: none;
+      margin: 0 auto;
+    }
 
     #placeholder-text {
       position: absolute;
       color: white;
-      font-size: 16px; /* Adjust font size for smaller screens */
+      font-size: 16px;
       text-align: center;
       padding: 10px;
     }
@@ -66,8 +65,8 @@
       font-size: 16px;
       border-radius: 5px;
       border: 1px solid #ccc;
-      width: 90%; /* Adjust width for mobile screens */
-      max-width: 400px; /* Limit maximum width */
+      width: 90%;
+      max-width: 400px;
       box-sizing: border-box;
     }
 
@@ -78,26 +77,33 @@
       font-size: 16px;
       border-radius: 5px;
       cursor: pointer;
-      margin-top: 10px; /* Adjust margin to position between input and ball */
+      margin-top: 10px;
     }
 
     button:hover {
       background-color: #21a1f1;
     }
 
-    /* Media Query for Smaller Screens */
+    /* Media Query for Smaller Screens (Mobile) */
     @media (max-width: 600px) {
+      #magic-ball {
+        width: 80vw; /* Use viewport width for a responsive size */
+        height: 80vw;
+        max-width: 800px;
+        max-height: 800px;
+      }
+
       h1 {
         font-size: 20px;
       }
 
       #placeholder-text {
-        font-size: 14px; /* Reduce placeholder text size */
+        font-size: 14px;
       }
 
       button {
         font-size: 14px;
-        padding: 8px 16px; /* Adjust button size for smaller screens */
+        padding: 8px 16px;
       }
     }
   </style>
@@ -112,6 +118,7 @@
     <img id="response" src="" alt="Magic 8-Ball Response" />
     <div id="placeholder-text">Your answer will appear here!</div>
   </div>
+
 
   <script>
     const responses = [
