@@ -20,7 +20,7 @@
       font-size: 24px;
     }
 
-      #magic-ball {
+    #magic-ball {
       margin: 20px auto;
       width: 80vw; /* Large size for desktop screens */
       height: 80vw; /* Maintain a square shape based on viewport width */
@@ -35,16 +35,7 @@
       box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
       overflow: hidden;
     }
-    
-    #response {
-      width: 100%; /* Stretch the image to fill the container */
-      height: 100%;
-      object-fit: contain; /* Maintain aspect ratio */
-      display: none;
-      margin: 0 auto;
-    }
 
-   
     #placeholder-image {
       width: 42.5%; /* Shrink the image by 15% (from 50% to 42.5%) */
       height: auto; /* Maintain aspect ratio */
@@ -54,21 +45,22 @@
       display: block; /* Ensure it is visible by default */
     }
 
-    #response {
-      width: 100%; /* Stretch the image to fill the container */
-      height: 100%;
-      object-fit: contain; /* Maintain aspect ratio */
-      display: none;
-      margin: 0 auto;
-    }
-
     #placeholder-text {
       position: absolute;
       color: white;
       font-size: 16px;
       text-align: center;
       padding: 10px;
-      Margin-top: 10px;
+      bottom: 15%; /* Adjust the text to sit below the image */
+      margin-top: 5px; /* Reduce spacing between the placeholder image and text */
+    }
+
+    #response {
+      width: 100%; /* Stretch the image to fill the container */
+      height: 100%;
+      object-fit: contain; /* Maintain aspect ratio */
+      display: none;
+      margin: 0 auto;
     }
 
     #question-box {
@@ -117,6 +109,7 @@
 
       #placeholder-text {
         bottom: 12%; /* Adjust text position for small screens */
+        margin-top: 3px; /* Reduce spacing further for smaller screens */
       }
     }
   </style>
