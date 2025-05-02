@@ -44,12 +44,31 @@
       margin: 0 auto;
     }
 
+   
+    #placeholder-image {
+      width: 42.5%; /* Shrink the image by 15% (from 50% to 42.5%) */
+      height: auto; /* Maintain aspect ratio */
+      max-width: 255px; /* Optional: Limit the maximum size */
+      position: absolute; /* Allow it to be positioned */
+      top: 10%; /* Position it above the placeholder text */
+      display: block; /* Ensure it is visible by default */
+    }
+
+    #response {
+      width: 100%; /* Stretch the image to fill the container */
+      height: 100%;
+      object-fit: contain; /* Maintain aspect ratio */
+      display: none;
+      margin: 0 auto;
+    }
+
     #placeholder-text {
       position: absolute;
       color: white;
       font-size: 16px;
       text-align: center;
       padding: 10px;
+      bottom: 15%; /* Adjust the text to sit below the image */
     }
 
     #question-box {
@@ -90,8 +109,16 @@
         max-width: 800px;
         max-height: 800px;
       }
+
+      #placeholder-image {
+        width: 35%; /* Further shrink image for smaller screens */
+        top: 8%; /* Adjust positioning */
+      }
+
+      #placeholder-text {
+        bottom: 12%; /* Adjust text position for small screens */
+      }
     }
- 
   </style>
 </head>
 <body>
