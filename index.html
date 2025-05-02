@@ -102,6 +102,7 @@
   <button onclick="shakeMagic8Ball()">Ask the Magic Em-Ball</button>
   <button onclick="resetMagic8Ball()">Ask another question!</button>
   <div id="magic-ball">
+     <img id="placeholder-image" src="images/MagicEmBall.png" alt="Magic 8-Ball Placeholder" />
     <img id="response" src="" alt="Magic 8-Ball Response" />
     <div id="placeholder-text">Your answer will appear here!</div>
   </div>
@@ -150,19 +151,23 @@
         return;
       }
 
+      // Get random image response
       const randomIndex = Math.floor(Math.random() * responses.length);
       const randomImage = responses[randomIndex];
 
+      // Update response image and hide placeholder
       const responseElement = document.getElementById("response");
       const placeholderText = document.getElementById("placeholder-text");
+      const placeholderImage = document.getElementById("placeholder-image");
 
       responseElement.src = randomImage;
-      responseElement.style.display = "block";
-      placeholderText.style.display = "none";
+      responseElement.style.display = "block"; // Show response image
+      placeholderText.style.display = "none"; // Hide placeholder text
+      placeholderImage.style.display = "none"; // Hide placeholder image
 
       console.log("User's Question:", userQuestion);
     }
-    
+
     function resetMagic8Ball() {
    const userQuestion = document.getElementById("user-question");
    userQuestion.value = "";
