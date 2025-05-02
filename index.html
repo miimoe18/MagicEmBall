@@ -146,28 +146,23 @@
     ];
 
     function shakeMagic8Ball() {
-      // Get the user's question
       const userQuestion = document.getElementById("user-question").value;
 
-      // Check if the question is empty
       if (!userQuestion.trim()) {
         alert("Please type a question before asking the Magic 8-Ball!");
         return;
       }
 
-      // Select a random response
       const randomIndex = Math.floor(Math.random() * responses.length);
       const randomImage = responses[randomIndex];
 
-      // Set the image as the response
       const responseElement = document.getElementById("response");
       const placeholderText = document.getElementById("placeholder-text");
 
       responseElement.src = randomImage;
-      responseElement.style.display = "block"; // Show the image
-      placeholderText.style.display = "none"; // Hide the placeholder text
+      responseElement.style.display = "block";
+      placeholderText.style.display = "none";
 
-      // Optionally, log the user's question (for debugging or display purposes)
       console.log("User's Question:", userQuestion);
     }
   </script>
