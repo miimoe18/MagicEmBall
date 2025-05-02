@@ -38,12 +38,15 @@
     }
 
     #response {
-      max-width: 100%; /* Display the entire image */
-      max-height: 100%; /* Display the entire image */
-      object-fit: contain; /* Ensure the image maintains its aspect ratio */
-      display: none; /* Hide the image by default */
-      border-radius: 0; /* Remove cropping effect */
-    }
+  width: 80%; /* Set a percentage for responsiveness */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 300px; /* Ensure images don’t get too large */
+  max-height: 300px; /* Limit the height */
+  object-fit: contain; /* Ensures the image scales without distortion */
+  display: none; /* Hide the image by default */
+  margin: 0 auto; /* Center the image horizontally */
+}
+
 
     #placeholder-text {
       position: absolute;
