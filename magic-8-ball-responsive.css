@@ -29,13 +29,13 @@ h1 {
 }
 
 #response {
-  width: 80%;
-  height: auto;
-  max-width: 300px;
-  max-height: 300px;
-  object-fit: contain;
-  display: none;
-  margin: 0 auto;
+  width: 100%; /* Set the image to fill the width of its container */
+  height: 100%; /* Set the image to fill the height of its container */
+  max-width: 300px; /* Optional: Limit the maximum width */
+  max-height: 300px; /* Optional: Limit the maximum height */
+  object-fit: cover; /* This will stretch smaller images to fill the container */
+  display: none; /* Hide the image by default */
+  margin: 0 auto; /* Center the image horizontally */
 }
 
 #placeholder-text {
